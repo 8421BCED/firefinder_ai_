@@ -1,0 +1,23 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.log
+
+# Django DB
+db.sqlite3
+
+# Environment variables
+.env
+
+# Static/media files
+/static/
+/media/
+
+# IDE settings
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
