@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .llm_engine import get_fire_prediction  # We'll build this soon
+from .llm_engine import get_fire_prediction  # Your custom model
 
 def home(request):
     return render(request, "predictor/index.html")

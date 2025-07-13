@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from predictor import views
-
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
        path('', views.home),  # main Cesium view
     path('simulate/', views.simulate),  # fire prediction endpoint
+     path('', include('predictor.urls')),  # ✅ Include your app's urls
 ]
  
+
+
  
