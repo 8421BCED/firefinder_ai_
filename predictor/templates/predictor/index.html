@@ -71,16 +71,16 @@
     viewer.scene.backgroundColor = Cesium.Color.BLACK;
     document.getElementById('loadingIndicator').style.display = 'none';
 
-    // ✅ NASA Fire Layer through Django proxy (bypasses CORS)
-   viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
-  url: 'http://localhost:8000/wms/',  // ✅ Django Proxy here
-  layers: 'fires_viirs_snpp_24',
-  parameters: {
-    transparent: true,
-    format: 'image/png'
-  },
-  credit: '🔥 NASA FIRMS via FireFinder Proxy'
-}));
+    // ✅ Direct NASA FIRMS WMS URL with your key (no proxy needed on Render)
+    viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+      url: 'https://firms.modaps.eosdis.nasa.gov/wms/key/cqEHetdiNoaAwKTaZbouvdNVmcKjDuIV/',
+      layers: 'fires_viirs_snpp_24',
+      parameters: {
+        transparent: true,
+        format: 'image/png'
+      },
+      credit: '🔥 NASA FIRMS'
+    }));
 
     // 🌍 Auto-spin logic
     let lastTime = Date.now();
