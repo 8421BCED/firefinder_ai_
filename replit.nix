@@ -4,5 +4,6 @@
     pkgs.python310Packages.pip
     pkgs.python310Packages.setuptools
     pkgs.python310Packages.django
+    pkgs.git
   ];
 }
